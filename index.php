@@ -1,0 +1,26 @@
+<?php
+
+// NOTES:
+// Testing Server >>>>> php -S localhost:8000
+// Close Server >>>>> "Control C"
+// Open Command Line >>>>> "Command J"
+// Clear Command Line >>>>> "Command K"
+// Check Version >>>>> php --version
+// Composer is PHP's NPM
+// Import Dependencies >>>>> require, use.
+
+// This Slugify dependency basically just turns stuff into Slug (kebab) case!
+require __DIR__ . "/vendor/autoload.php";
+use Cocur\Slugify\Slugify;
+
+$slugify = new Slugify();
+echo $slugify->slugify("The sky is green and the grass is blue!");
+
+$niftyShit = 2 + 2;
+$name = "Chrispy";
+echo $niftyShit; // SIGIL VARIABLE WORKS NICELY WITHIN DOUBLE QUOTES
+echo "My name is $name and I have " . touchTheMoon($niftyShit) . " instances of nifty shit (incense).";
+
+function touchTheMoon($x){
+	return $x * 2;
+}
