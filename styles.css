@@ -1,0 +1,176 @@
+/* ----- HEADING ASSETS ----- */
+
+:root {
+	--clr-primary: #a1dbf8;
+	--clr-secondary: #f59b60;
+	--clr-tertiary: #8acb88;
+	--clr-quaternary: #9A031E;
+	--clr-quinary-body: #27233A;
+
+	--clr-gradient-common: 120deg, #f59b60 0%, #a1dbf8 100%;
+	--clr-grid-box: #90e5ee1a;
+
+	--clr-secondary-400: 217 19% 35%;
+}
+
+.signature-div {
+	text-align: left;
+}
+
+#camberden {
+	/* position: absolute; */
+	font-family: Permanent Marker, sans-serif;
+	font-size: 4rem;
+	/* min-width: 2rem;
+	min-height: 10rem; */
+	background: linear-gradient(#f59b60 20%, #a1dbf8 100%);
+	background-clip: border-box;
+	-webkit-background-clip: text;
+	color: transparent;
+	user-select: none;
+	text-shadow: -5px -2px 0px #700caa;
+
+	animation-name: change-text-shadow;
+  	animation-duration: 5s;
+  	animation-iteration-count: infinite;
+}
+@keyframes change-text-shadow {
+	40% {
+		text-shadow: -5px -2px 0px rgb(81, 12, 170);
+	}
+	80% {
+		text-shadow: -5px -2px 0px rgb(133, 12, 170);
+	}
+	100% {
+		text-shadow: -5px -2px 0px rgb(112, 12, 170);
+	}
+}
+
+@font-face {
+	font-family: eremoran-kiptascript;
+	src: url("assets/font-eremoran-kiptascript.otf") format("opentype");
+}
+
+.eremoran-kiptascript {
+	font-family: eremoran-kiptascript;
+	font-size: 5rem;
+}
+
+/* ----- BODY ASSETS ----- */
+
+body {
+	color: var(--clr-primary);
+	font-family: Lora, Georgia, 'Times New Roman', Times, serif;
+	text-align: center;
+	/* z-index: 1; */
+	background-image: url('assets/image-curtain.svg'); 
+	/* #EEEFF0 in SVG Fill */
+	/* background-color: #292540; */
+	background-color: var(--clr-quinary-body);
+}
+
+p {
+	color: inherit;
+}
+
+.common-background {
+	background-color: #90e5ee1a;
+}
+
+.index-grid {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	
+	gap: 0.5rem;
+	grid-template-columns: repeat(1, 100%); /* repeat(4, 25%) */
+	width: min(60%, 70rem);
+	margin-inline: auto;
+}
+
+.section-title {
+	font-size: 1rem;
+	cursor: pointer;
+
+	border-bottom: 0.1rem solid var(--clr-tertiary);
+	border-left: 0.5rem solid var(--clr-grid-box);
+	border-right: 0.5rem solid var(--clr-grid-box);
+
+	
+	background-repeat: no-repeat;
+	background-size: 25% 0.1em;
+	background-position: 0 88%;
+}
+
+.section-title:hover {
+	color: var(--clr-secondary);
+	background-size: 100% 5%;
+	background-image: linear-gradient(var(--clr-gradient-common));
+	transition: background-size 0.3s ease-in;
+}
+
+button {
+	user-select: none;
+}
+
+.marker {
+	color: var(--clr-secondary);
+	font-family: Permanent Marker, serif;
+}
+
+#header-and-return {
+	padding: 2rem;
+}
+
+#return {
+	font-size: 1em;
+	text-align: left;
+	display: flex;
+	flex: 0.1rem;
+	align-items: left;
+	justify-content: left;
+}
+
+#return a:hover {
+	color: var(--clr-tertiary);
+}
+
+a {
+	text-decoration: solid;
+	outline: 0;
+	cursor: pointer;
+
+	color: var(--clr-secondary);
+	background-image: linear-gradient(120deg, 0%,  100%);
+	background-repeat: no-repeat;
+	background-size: 25% 0.1em;
+	background-position: 0 88%;
+	transition: background-size 0.1s ease-in;
+}
+
+a:hover {
+	color: var(--clr-tertiary);
+	background-size: 100% 5%;
+	background-image: linear-gradient(120deg, #f59b60 0%, #a1dbf8 100%);
+}
+
+/* FOR SOMETHING TO HIGHLIGHT IN VIEWPORT: PENDING USE CASE */
+.text-flourish {
+	background-size: 100% 5%;
+	background-image: linear-gradient(120deg, rgb(245, 155, 96) 0%, rgb(161, 219, 248) 100%);
+}
+
+.footer {
+	/* padding: -1rem; */
+	background-color: black;
+	background-position: inherit;
+
+	border-bottom: 1rem solid var(--clr-grid-box);
+	border-right: 0.5rem solid var(--clr-grid-box);
+
+	background-image:
+	linear-gradient(rgba(1, 0, 0, 0.0), rgba(1, 0, 0, 0.0)),
+	url('assets/image-camberden-signature-small-favicon.ico');
+	animation: small-signature-movement 30s linear infinite;
+}
+
