@@ -1,10 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en-US">
 <!-- Hi there! :V -->
 
 <head>
 	<meta charset="UTF-8">
-	<link rel="shortcut icon" href="assets/image-crystal-chrispy-favicon.png">
 	<link rel="stylesheet" type="text/css" href="styles.css" media="screen" />
 	<link href="https://fonts.googleapis.com/css?family=Lora:400italic" rel="stylesheet" type="text/css">
 	<link href="https://fonts.googleapis.com/css?family=Permanent+Marker:400" rel="stylesheet" type="text/css">
@@ -28,67 +28,45 @@
 
 		<div class="plaything">
 			<h2>
-				<?php 
-					echo "Hello, you.<br>";
-					echo "Echoed from the depths.";
-					
-					$yoshis = [
-						"Red",
-						"Blue",
-						"Yellow",
-						"Light Blue",
-						"White",
-						"Orange",
-						"Pink",
-					];
-
-					$containers = [
-						[
-							"Crate" => "Apple",
-							"Bottle" => "Water",
-						],
-						[
-							"Bin" => "Banana",
-							"Bucket" => "Juice",
-						],
-					];
-
-					function filterYoshis($yoshis) {
-						return $yoshis[0];
-					}
-
-				?>
+				<?php require "./action.php"; ?>
 
 			</h2>
 
 			<ul>Yoshis<hr>
-				<?php foreach ($yoshis as $yoshi) {
-					echo "<li>Hi</li>";
-				};	
+				<?php 
+				$yoshis = ["blue", "red", "green", "yellow"]; 
+				$sites = [
+					["name" => "Camberden", "link" => "http://camberden.com"],
+					["name" => "Mocha", "link" => "https://mocha2007.github.io"],
+				];
+				
 				?>
-				<hr>
 				<?php foreach ($yoshis as $yoshi): ?>
-				<li><?=$yoshi?></li>
+				<li><?= "Theres a " . $yoshi . " Yoshi" ?></li>
 				<?php endforeach; ?>
-				<li> <?= filterYoshis($yoshis); ?> </li>
+			</ul>
+			<ul>Sites<hr>
+					<?php foreach ($sites as $site) : ?>
+						<?php //if ($site["name"] === "Mocha") : ?>
+						<li>
+							<span><?=$site["name"] . ": "?></span><a href="<?= $site["link"]?>">link!</a>
+						</li>
+						<?php //endif ?>
+					<?php endforeach ?>
 
 			</ul>
 
-
 		</div>
-
-
 
 
 		<div class="index-item footer">
-			<p class="marker" id="footer-text">Made with ❤️ by Chrispy</span></p>
+			<span class="marker" id="footer-text">Made with ❤️ by Chrispy</span>
 		</div>
 
 	</main>
-
 	
 
-	<!-- <script src="action.js"></script> -->
+	<script src="action.js"></script>
 </body>
 
 </html>
